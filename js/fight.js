@@ -250,7 +250,7 @@ function startGame() {
             star[--this.health].setAttribute('fill-opacity', 0);
             if (this.health === 0) {
                 audioFight.pause();
-                window.navigator.vibrate(100);
+                window.navigator.vibrate(2000);
                 audioGlass.play();
                 clearTimeout(timeout);
                 clearInterval(taimer);
@@ -272,6 +272,7 @@ function startGame() {
     function shot(e) { //выстрел
         var e = e || window.event;
         audioMyShot.play();
+        window.navigator.vibrate(100);
 
         if (e.target == door5Move.elem.firstChild) {
             door5Move.move();
