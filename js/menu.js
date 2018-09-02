@@ -6,20 +6,24 @@ setTimeout(function () {
         preloader.classList.add("done");
     }
     right();
-}, 1000)
+}, 2000)
 
-var soundMenu = document.querySelector('.sound-menu');
-    // soundMenu.play();
+var audioMenu = new Audio;
+if (audioMenu.canPlayType("audio/mpeg") == "probably") {
+    audioMenu.src = "./audio/menu.ogg";
+} else {
+    audioMenu.src = "./audio/menu.mp3";
+}
 
-var start = document.querySelector(".button");
-start.addEventListener("click", function() {
-    soundMenu.pause();
-    // startGame();
-}, false)
+function musicStart() {
+    audioMenu.play();
+}
+
 
 var rightButton = document.querySelector('.right');
 rightButton.addEventListener('click', right, false);
 var count = 1;
+
 function right() {
     count++;
     if (count > 5) {
@@ -33,6 +37,7 @@ function right() {
 
 var leftButton = document.querySelector('.left');
 leftButton.addEventListener('click', left, false);
+
 function left() {
     count--;
     if (count < 1) {

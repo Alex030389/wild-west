@@ -90,7 +90,17 @@ var kust = {
     }
 };
 
-requestAnimationFrame(tick);
+var RAF=
+window.requestAnimationFrame ||
+window.webkitRequestAnimationFrame ||
+window.mozRequestAnimationFrame ||
+window.oRequestAnimationFrame ||
+window.msRequestAnimationFrame ||
+function(callback)
+    { window.setTimeout(callback, 1000 / 60); }
+;
+
+RAF(tick);
 
 function tick() {
     kust.posX += kust.speedX;
@@ -116,7 +126,18 @@ function tick() {
     }
 
     kust.update();
-    requestAnimationFrame(tick);
+    RAF(tick);
+}
+
+// audio
+var audioFight=new Audio("./audio/fight.ogg");
+
+function musicInit() {
+    audioFight.play();
+    audioFight.pause();
+    audioFight.loop = true;
+    audioFight.volume=0.5;
+    console.log(1);
 }
 
 
@@ -124,12 +145,12 @@ function tick() {
 // startGame();
 
 function startGame() {
-
-    // audio =============================================================================
-    var audioFight = document.querySelector(".audio-fight");
     audioFight.play();
+
     var audioGlass = document.querySelector(".audio-glass");
-    
+    var audioMyShot = document.querySelector(".audio-my-shot");
+    var audioRecharge = document.querySelector(".audio-recharge");
+    var audioGangShot = document.querySelector(".audio-gang-shot");
 
 
 
@@ -224,12 +245,12 @@ function startGame() {
     var sheriff = {
         health: 2,
         hit: function () {
-            // звук выстрела гангстера
+            audioGangShot.play();
             var star = document.querySelectorAll(".star");
             star[--this.health].setAttribute('fill-opacity', 0);
             if (this.health === 0) {
-                // звук разбитого стекла
                 audioFight.pause();
+                window.navigator.vibrate(100);
                 audioGlass.play();
                 clearTimeout(timeout);
                 clearInterval(taimer);
@@ -250,7 +271,7 @@ function startGame() {
 
     function shot(e) { //выстрел
         var e = e || window.event;
-        // звук выстрела моего
+        audioMyShot.play();
 
         if (e.target == door5Move.elem.firstChild) {
             door5Move.move();
@@ -294,7 +315,7 @@ function startGame() {
 
     function recharge(e) { //перезарядка
         var e = e || window.event;
-        // звук перезарядки
+        audioRecharge.play();
         if (e.keyCode === 32) {
             aa = 6;
             window.addEventListener("click", shot, false);
@@ -421,12 +442,12 @@ function final(yourResult) {
 
     // создать модальное окно c результатом и финальная музыка
     function updateReady() {
-        audioTheEnd.play();
         var bestResult = document.createElement('div');
         bestResult.classList.add('best-result');
         bestResult.innerHTML = 'Лучший результат: ' + info.lider + '<br>' + 'Твой результат: ' + yourResult;
         document.body.appendChild(bestResult);
         setTimeout(function () {
+            audioTheEnd.play();
             bestResult.classList.add('best-result_opacity');
         }, 2000)
     }

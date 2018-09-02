@@ -174,7 +174,7 @@ body {
     align-items: center;
     text-align: center;
     opacity: 0;
-    transition: 3s linear;
+    transition: 4s linear;
 
     z-index: 100;
 }
