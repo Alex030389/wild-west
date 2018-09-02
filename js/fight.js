@@ -63,67 +63,77 @@ function size(div, svg) {
 
 
 // Полет куста       ==============================================================
-// var kustWrap = document.querySelector(".kust-wrap");
-// var kust = {
-//     posX: 0,
-//     posY: 0,
+var kustWrap = document.querySelector(".kust-wrap");
+var kust = {
+    posX: 0,
+    posY: 0,
 
-//     width: 50,
-//     height: 50,
+    width: 50,
+    height: 50,
 
-//     speedX: 6,
-//     speedY: 0,
+    speedX: 6,
+    speedY: 0,
 
-//     accelX: 0,
-//     accelY: 0.1,
+    accelX: 0,
+    accelY: 0.1,
 
-//     rotate: function () {
-//         var kustImg = document.querySelector(".kust__img");
-//         kustImg.style.cssText = "transform: rotate(360deg)";
-//     },
-//     update: function () {
-//         var kustPos = document.querySelector(".kust");
-//         kustPos.style.width = this.width + "px";
-//         kustPos.style.height = this.height + "px";
-//         kustPos.style.left = Math.round(this.posX) + "px";
-//         kustPos.style.top = Math.round(this.posY) + "px";
-//     }
-// };
+    rotate: function () {
+        var kustImg = document.querySelector(".kust__img");
+        kustImg.style.cssText = "transform: rotate(360deg)";
+    },
+    update: function () {
+        var kustPos = document.querySelector(".kust");
+        kustPos.style.width = this.width + "px";
+        kustPos.style.height = this.height + "px";
+        kustPos.style.left = Math.round(this.posX) + "px";
+        kustPos.style.top = Math.round(this.posY) + "px";
+    }
+};
 
-// requestAnimationFrame(tick);
+requestAnimationFrame(tick);
 
-// function tick() {
-//     kust.posX += kust.speedX;
+function tick() {
+    kust.posX += kust.speedX;
 
-//     if (kust.width + kust.posX > kustWrap.offsetWidth) {
-//         kust.width = 0;
-//         kust.update();
-//         startGame();
-//         return;
-//     }
+    if (kust.width + kust.posX > kustWrap.offsetWidth) {
+        kust.width = 0;
+        kust.update();
+        startGame();
+        return;
+    }
 
-//     kust.speedY += kust.accelY;
-//     kust.posY += kust.speedY;
+    kust.speedY += kust.accelY;
+    kust.posY += kust.speedY;
 
-//     if (kust.posY + kust.width > kustWrap.offsetHeight) {
-//         kust.speedY = -kust.speedY;
-//         kust.rotate();
-//         kust.posY = kustWrap.offsetHeight - kust.height;
-//     }
+    if (kust.posY + kust.width > kustWrap.offsetHeight) {
+        kust.speedY = -kust.speedY;
+        kust.rotate();
+        kust.posY = kustWrap.offsetHeight - kust.height;
+    }
 
-//     if (kust.posY < 0) {
-//         kust.speedY = -kust.speedY;
-//     }
+    if (kust.posY < 0) {
+        kust.speedY = -kust.speedY;
+    }
 
-//     kust.update();
-//     requestAnimationFrame(tick);
-// }
+    kust.update();
+    requestAnimationFrame(tick);
+}
 
 
 
-startGame();
+// startGame();
 
 function startGame() {
+
+    // audio =============================================================================
+    var audioFight = document.querySelector(".audio-fight");
+    audioFight.play();
+    var audioGlass = document.querySelector(".audio-glass");
+    
+
+
+
+
     var taimer = setInterval(function () {
         score.makeCounter();
         rand(3); //скорость появления гангстеров 250 * 5
@@ -219,6 +229,8 @@ function startGame() {
             star[--this.health].setAttribute('fill-opacity', 0);
             if (this.health === 0) {
                 // звук разбитого стекла
+                audioFight.pause();
+                audioGlass.play();
                 clearTimeout(timeout);
                 clearInterval(taimer);
                 var result = score.count;
@@ -343,6 +355,8 @@ function startGame() {
 
 // вывод финальной заставки        =========================================================================
 function final(yourResult) {
+    var audioTheEnd = document.querySelector(".audio-the-end");
+    
     // разбить стекло =================================================================
     var theEnd = document.createElement('div');
     theEnd.classList.add('the-end');
@@ -352,7 +366,6 @@ function final(yourResult) {
 
     // ajax
     var info;
-
     var ajaxHandlerScript = "https://fe.it-academy.by/AjaxStringStorage2.php";
     var updatePassword;
     var stringName = 'KAMEISHA_WILDWEST_RESULT';
@@ -406,14 +419,9 @@ function final(yourResult) {
         alert(statusStr + ' ' + errorStr);
     }
 
-
-
-    // вставить музыку the-end
-
-
-
-    // создать модальное окно c результатом
+    // создать модальное окно c результатом и финальная музыка
     function updateReady() {
+        audioTheEnd.play();
         var bestResult = document.createElement('div');
         bestResult.classList.add('best-result');
         bestResult.innerHTML = 'Лучший результат: ' + info.lider + '<br>' + 'Твой результат: ' + yourResult;
