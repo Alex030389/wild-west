@@ -1,0 +1,137 @@
+* {
+    font-family: 'Corben', Tahoma, Verdana, sans-serif;
+}
+
+/* Прелоадер =======================================*/
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #ebb43f;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s all;
+    opacity: 1;
+}
+
+.loader {
+    width: 150px;
+    height: 150px;
+    animation: 5s spin infinite linear;
+}
+
+.done {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    /* background-image: linear-gradient(#6697AD 37%,#B48C75 40%); */
+    background: url(../img/bg.jpg) center center no-repeat rgb(114, 30, 30);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrap {
+    max-width: 650px;
+    width: 100%;
+    max-height: 650px;
+    height: 100%;
+    /* background-color: rgba(255, 255, 255, 0.281); */
+    cursor: crosshair;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.wild-west {
+    color: white;
+    font-size: 80px;
+}
+
+.slaider {
+    width: 100%;
+    border-radius: 170px;
+    background-color: rgba(230, 172, 119, 0.774);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.left {
+    width: 0;
+    height: 0;
+    border-right: 50px solid #8f3a3a;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    transition: 300ms;
+}
+
+.left:hover {
+    border-right: 50px solid #3AAF7E;
+}
+
+.right {
+    width: 0;
+    height: 0;
+    border-left: 50px solid #8f3a3a;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    transition: 300ms;
+}
+
+.right:hover {
+    border-left: 50px solid #3AAF7E
+}
+
+.gangster {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.gangster-img {
+    width: 50%;
+}
+
+.gangster-text {
+    font-size: 20px;
+    text-align: center;
+    padding-top: 15px;
+    font-family: "Tahoma", Verdana, sans-serif;
+}
+
+.button {
+    width: 30%;
+    height: 8%;
+    background-color: #3AAF7E;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button:hover {
+    background-color: #e25b5b;
+    transition: 300ms;
+}
