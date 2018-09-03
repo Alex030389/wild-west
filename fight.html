@@ -15,15 +15,15 @@
 
 <body>
     <div class="kust-wrap">
-        <div class="kust" onclick="musicInit()">
-            <img class="kust__img" src="./img/kust.png" alt="">
+        <div class="kust">
+            <img onclick="musicInit()" class="kust__img" src="./img/kust.png" alt="">
         </div>
     </div>
 
-    <!-- <audio class="audio-fight" loop>
+    <audio class="audio-fight">
         <source src="./audio/fight.ogg" type="audio/ogg; codecs=vorbis">
         <source src="./audio/fight.mp3" type="audio/mpeg">
-    </audio> -->
+    </audio>
     <audio class="audio-my-shot">
         <source src="./audio/my-shot.ogg" type="audio/ogg; codecs=vorbis">
         <source src="./audio/my-shot.mp3" type="audio/mpeg">
@@ -107,7 +107,7 @@
                 <rect x="825" y="350" width="50" height="231" fill="#73492A" />
             </g>
             <g class="saloon">
-                <path onclick="musicInit()" d="M531 332C531 304.938 552.938 283 580 283H720C747.062 283 769 304.938 769 332V349H531V332Z" fill="#F6E6E6" stroke="black"
+                <path d="M531 332C531 304.938 552.938 283 580 283H720C747.062 283 769 304.938 769 332V349H531V332Z" fill="#F6E6E6" stroke="black"
                     stroke-width="2" />
                 <text x=555 y=333 font-size=38 font-family="Corben" , Verdana fill=#611F22>SALLON</text>
             </g>
@@ -172,10 +172,6 @@
         </svg>
 
     </div>
-    <!-- <div class="the-end"> -->
-        <!-- <img class="the-end__img" src="./img/glass.png" alt=""> -->
-    <!-- </div> -->
-
 </body>
 
 </html>

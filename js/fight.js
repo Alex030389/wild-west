@@ -62,6 +62,23 @@ function size(div, svg) {
 
 
 
+// audio
+var audioFight = document.querySelector(".audio-fight");
+var audioMyShot = document.querySelector(".audio-my-shot");
+var audioRecharge = document.querySelector(".audio-recharge");
+var audioGangShot = document.querySelector(".audio-gang-shot");
+var audioGlass = document.querySelector(".audio-glass");
+var audioTheEnd = document.querySelector(".audio-the-end");
+
+function musicInit() {
+    audioFight.play();
+    audioFight.pause();
+    audioFight.loop = true;
+    audioFight.volume = 0.5;
+}
+
+
+
 // Полет куста       ==============================================================
 var kustWrap = document.querySelector(".kust-wrap");
 var kust = {
@@ -90,15 +107,15 @@ var kust = {
     }
 };
 
-var RAF=
-window.requestAnimationFrame ||
-window.webkitRequestAnimationFrame ||
-window.mozRequestAnimationFrame ||
-window.oRequestAnimationFrame ||
-window.msRequestAnimationFrame ||
-function(callback)
-    { window.setTimeout(callback, 1000 / 60); }
-;
+var RAF =
+    window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.oRequestAnimationFrame ||
+    window.msRequestAnimationFrame ||
+    function (callback) {
+        window.setTimeout(callback, 1000 / 60);
+    };
 
 RAF(tick);
 
@@ -129,17 +146,6 @@ function tick() {
     RAF(tick);
 }
 
-// audio
-var audioFight=new Audio("./audio/fight.ogg");
-
-function musicInit() {
-    audioFight.play();
-    audioFight.pause();
-    audioFight.loop = true;
-    audioFight.volume=0.5;
-    console.log(1);
-}
-
 
 
 // startGame();
@@ -147,18 +153,10 @@ function musicInit() {
 function startGame() {
     audioFight.play();
 
-    var audioGlass = document.querySelector(".audio-glass");
-    var audioMyShot = document.querySelector(".audio-my-shot");
-    var audioRecharge = document.querySelector(".audio-recharge");
-    var audioGangShot = document.querySelector(".audio-gang-shot");
-
-
-
-
     var taimer = setInterval(function () {
         score.makeCounter();
         rand(3); //скорость появления гангстеров 250 * 5
-    }, 500);
+    }, 400);
 
 
     // вывод счета на экран        =================================================================
@@ -314,6 +312,35 @@ function startGame() {
 
     window.addEventListener("keydown", recharge, false);
 
+    var touchstartY = 0;
+    var touchendY = 0;
+
+    var gesuredZone = document.body;
+
+    gesuredZone.addEventListener('touchstart', function (event) {
+        touchstartY = event.screenY;
+    }, false);
+
+    gesuredZone.addEventListener('touchend', function (event) {
+        touchendY = event.screenY;
+        handleGesure();
+    }, false);
+
+    function handleGesure() {
+        // var swiped = 'swiped: ';
+        if (touchendY < touchstartY) {
+            // alert(swiped + 'down!');
+            recharge();
+        }
+        if (touchendY > touchstartY) {
+            // alert(swiped + 'left!');
+            recharge();
+        }
+    }
+
+
+
+
     function recharge(e) { //перезарядка
         var e = e || window.event;
         audioRecharge.play();
@@ -377,8 +404,7 @@ function startGame() {
 
 // вывод финальной заставки        =========================================================================
 function final(yourResult) {
-    var audioTheEnd = document.querySelector(".audio-the-end");
-    
+
     // разбить стекло =================================================================
     var theEnd = document.createElement('div');
     theEnd.classList.add('the-end');
@@ -409,7 +435,7 @@ function final(yourResult) {
             error: errorHandler
         });
     }
-    
+
     function lockGetReady(callresult) {
         info = JSON.parse(callresult.result);
         if (callresult.error != undefined) {

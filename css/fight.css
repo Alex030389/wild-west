@@ -57,7 +57,7 @@ body {
 .door-bottom-6__inner {
     height: 100%;
     width: 67%;
-    background-color: rgb(172, 172, 172);
+    /* background-color: rgb(172, 172, 172); */
     margin: 0 auto;
 }
 
@@ -70,7 +70,7 @@ body {
     margin: auto;
     width: calc(100% / 3);
     height: 100%;
-    background-color: rgb(172, 172, 172);
+    /* background-color: rgb(172, 172, 172); */
     transition: 1s;
 }
 
@@ -83,7 +83,7 @@ body {
     width: calc(100% / 3);
     height: 100%;
     margin-right: calc(100% / 3 * 2);
-    background-color: rgb(172, 172, 172) ;
+    /* background-color: rgb(172, 172, 172) ; */
     transition: 1s;
 }
 
@@ -96,7 +96,7 @@ body {
     margin-left: calc(100% / 3 * 2);
     width: calc(100% / 3);
     height: 100%;
-    background-color: rgb(172, 172, 172);
+    /* background-color: rgb(172, 172, 172); */
     transition: 1s;
 }
 
