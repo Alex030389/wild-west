@@ -248,7 +248,7 @@ function startGame() {
             star[--this.health].setAttribute('fill-opacity', 0);
             if (this.health === 0) {
                 audioFight.pause();
-                window.navigator.vibrate(2000);
+                window.navigator.vibrate(1000);
                 audioGlass.play();
                 clearTimeout(timeout);
                 clearInterval(taimer);
@@ -312,34 +312,16 @@ function startGame() {
 
     window.addEventListener("keydown", recharge, false);
 
-    var touchstartY = 0;
-    var touchendY = 0;
-
-    var gesuredZone = document.body;
-
-    gesuredZone.addEventListener('touchstart', function (event) {
-        touchstartY = event.screenY;
-    }, false);
-
-    gesuredZone.addEventListener('touchend', function (event) {
-        touchendY = event.screenY;
-        handleGesure();
-    }, false);
-
-    function handleGesure() {
-        // var swiped = 'swiped: ';
-        if (touchendY < touchstartY) {
-            // alert(swiped + 'down!');
-            recharge();
-        }
-        if (touchendY > touchstartY) {
-            // alert(swiped + 'left!');
-            recharge();
-        }
-    }
-
-
-
+    // свайп
+    var bbody = document.body;
+    Hammer(bbody).on("swipe", function () {
+        audioRecharge.play();
+        aa = 6;
+        window.addEventListener("click", shot, false);
+        for (var i = 0; i < 6; i++) {
+            bullet[i].removeAttribute('fill-opacity');
+        };
+    })
 
     function recharge(e) { //перезарядка
         var e = e || window.event;
