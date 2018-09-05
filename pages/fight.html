@@ -278,7 +278,7 @@
         var taimer = setInterval(function () {
             score.makeCounter();
             rand(3); //скорость появления гангстеров 250 * 5
-        }, 400);
+        }, 600);
 
 
         // вывод счета на экран        =================================================================
@@ -329,27 +329,16 @@
         var doors = document.querySelectorAll('.door');
 
         var cont = 0;
-        // var dontRepDoor = undefined;
 
         function rand(n) {
             moveKalitka();
             if (++cont % n == 0) {
-
-                var i = randomDiap(0, doors.length - 1);
-                
-                
-
+                do {
+                    var i = randomDiap(0, doors.length - 1);
+                } while (doors[i].firstChild);
 
                 doors[i].appendChild(gangRandom().create());
                 moveKalitka();
-
-                // if (i != dontRepDoor) {
-                //     dontRepDoor = i;
-                //     doors[i].appendChild(gangRandom().create());
-                //     moveKalitka();
-                // } else {
-                //     rand(n);
-                // }
             }
         }
 
@@ -389,7 +378,6 @@
         var aa = 6;
         var propusk1 = 2;
         var propusk2 = 2;
-
         function shot(e) { //выстрел
             var e = e || window.event;
             audioMyShot.play();
@@ -402,14 +390,15 @@
                 door7Move.move();
             }
 
-            for (var i = 0; i < doors.length; i++) {
-                if (e.target == doors[i].firstChild) {
-                    clearTimeout(timeout);
-                    doors[i].removeChild(doors[i].firstChild);
-                }
-            }
+            // for (var i = 0; i < doors.length; i++) {
+            //     if (e.target == doors[i].firstChild) {
+            //         clearTimeout(timeout);
+            //         doors[i].removeChild(doors[i].firstChild);
+            //     }
+            // }
 
 
+            
 
             if (e.target == door5Move.elem.firstChild && propusk1 == 2) {
                 propusk1--;
@@ -420,6 +409,7 @@
                 propusk2 = 2;
                 for (var i = 0; i < doors.length; i++) {
                     if (e.target == doors[i].firstChild) {
+                        clearTimeout(timeout);
                         doors[i].removeChild(doors[i].firstChild);
                     }
                 }
