@@ -1,0 +1,42 @@
+<div class="preloader">
+    <img class="loader" src="./img/loader2.png" alt="loader">
+</div>
+
+<div class="wrap">
+    <div class="wild-west">Wild West</div>
+    <div class="slaider">
+        <div class="left"></div>
+
+        <div class="slaider__window">
+            <img class="slaider__img" alt="">
+            <span class="slaider__text">
+                111111111111111111111111
+            </span>
+        </div>
+
+        <div class="right"></div>
+    </div>
+    <div class="start-button">START</div>
+
+
+
+
+<script>
+"use strict"
+
+setTimeout(function () {
+    var preloader = document.querySelector(".preloader");
+    if (!preloader.classList.contains("done")) {
+        preloader.classList.add("done");
+    }
+}, 2000)
+
+audioMenu.play();
+
+var startButton = document.querySelector(".start-button");
+startButton.addEventListener('click', function() {
+    audioMenu.pause();
+    switchToAboutPage();
+}, false);
+
+</script>

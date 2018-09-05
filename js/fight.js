@@ -60,25 +60,6 @@ function size(div, svg) {
     kalitka.update();
 }
 
-
-
-// audio
-var audioFight = document.querySelector(".audio-fight");
-var audioMyShot = document.querySelector(".audio-my-shot");
-var audioRecharge = document.querySelector(".audio-recharge");
-var audioGangShot = document.querySelector(".audio-gang-shot");
-var audioGlass = document.querySelector(".audio-glass");
-var audioTheEnd = document.querySelector(".audio-the-end");
-
-function musicInit() {
-    audioFight.play();
-    audioFight.pause();
-    audioFight.loop = true;
-    audioFight.volume = 0.5;
-}
-
-
-
 // Полет куста       ==============================================================
 var kustWrap = document.querySelector(".kust-wrap");
 var kust = {
