@@ -275,13 +275,12 @@
     function startGame() {
         audioFight.play();
 
+        // вывод счета на экран        =================================================================
         var taimer = setInterval(function () {
             score.makeCounter();
-            rand(3); //скорость появления гангстеров 250 * 5
+            rand(3); //скорость появления гангстеров
         }, 600);
 
-
-        // вывод счета на экран        =================================================================
         var score = {
             count: 0,
             elem: document.querySelector(".skore-num"),
@@ -290,6 +289,7 @@
                 this.elem.innerHTML = this.count;
             }
         }
+
 
 
         //гангстеры                 ================================================================
@@ -378,6 +378,7 @@
         var aa = 6;
         var propusk1 = 2;
         var propusk2 = 2;
+
         function shot(e) { //выстрел
             var e = e || window.event;
             audioMyShot.play();

@@ -1,4 +1,14 @@
-<div class="preloader">
+<script>
+    "use strict"
+    setTimeout(function () {
+        var preloader = document.querySelector(".preloader");
+        if (!preloader.classList.contains("done")) {
+            preloader.classList.add("done");
+        }
+    }, 2000)
+</script>
+
+<div class="preloader" onclick="audioMenu.play()">
     <img class="loader" src="./img/loader2.png" alt="loader">
 </div>
 
@@ -8,35 +18,23 @@
         <div class="left"></div>
 
         <div class="slaider__window">
-            <img class="slaider__img" alt="">
-            <span class="slaider__text">
-                111111111111111111111111
-            </span>
+            <img class="slaider__img" src="../img/banda.png" alt="">
+            <div class="slaider__text">
+                <h1>Внимание!!!</h1>
+                <p>Нужно выбить из здания опасную и вооруженную группировку</p>
+            </div>
         </div>
 
         <div class="right"></div>
     </div>
     <div class="start-button">START</div>
-
-
-
+</div>
 
 <script>
-"use strict"
-
-setTimeout(function () {
-    var preloader = document.querySelector(".preloader");
-    if (!preloader.classList.contains("done")) {
-        preloader.classList.add("done");
-    }
-}, 2000)
-
-audioMenu.play();
-
-var startButton = document.querySelector(".start-button");
-startButton.addEventListener('click', function() {
-    audioMenu.pause();
-    switchToAboutPage();
-}, false);
-
+    "use strict"
+    var startButton = document.querySelector(".start-button");
+    startButton.addEventListener('click', function () {
+        audioMenu.pause();
+        switchToAboutPage();
+    }, false);
 </script>

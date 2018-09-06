@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     transition: 1s all;
     opacity: 1;
 }
@@ -18,7 +19,6 @@
     width: 150px;
     height: 150px;
     animation: 5s spin infinite linear;
-    cursor: pointer;
 }
 
 .done {
@@ -30,6 +30,7 @@
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -44,9 +45,9 @@
 }
 
 .wrap {
-    max-width: 650px;
+    max-width: 800px;
     width: 100%;
-    max-height: 650px;
+    max-height: 800px;
     height: 100%;
     cursor: crosshair;
     display: flex;
@@ -96,23 +97,24 @@
 }
 
 .slaider__window {
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px;
 }
 
 .slaider__img {
-    width: 50%;
+    height: 70%;
 }
 
 .slaider__text {
-    font-size: 20px;
+    font-size: 24px;
+    line-height: 1.4;
+    color: rgb(59, 59, 59);
     text-align: center;
-    padding-top: 15px;
     font-family: "Tahoma", Verdana, sans-serif;
+    padding-bottom: 20px;
 }
 
 .start-button {
@@ -132,22 +134,20 @@
 }
 
 /* ================= fight css =================== */
-
 .body-fight {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: crosshair;
-    background-image: linear-gradient(rgb(120, 170, 194) 37%,rgb(233, 190, 127) 38%);
+    background-image: linear-gradient(rgb(120, 170, 194) 37%, rgb(233, 190, 127) 38%);
 }
 
 .wrapper {
     position: relative;
     width: 1300px;
     height: 650px;
-    box-shadow: 0px 5px 5px -5px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.75);
 }
-
 
 /* куст ============================================*/
 .kust-wrap {
@@ -173,7 +173,6 @@
     transition-timing-function: linear;
     /* will-change: transform; */
 }
-
 
 /* дверные проемы ================================*/
 .door-1,
@@ -235,7 +234,6 @@
     transition: 1s;
 }
 
-
 /* калитка ======================================*/
 .kalitka {
     position: absolute;
@@ -269,7 +267,6 @@
     transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
 }
 
-
 /* гангстеры ============================= */
 .gangsters {
     width: 100%;
@@ -277,28 +274,23 @@
     transition: 1s;
 }
 
-
 /* разбитое стекло ========================*/
 .the-end {
     position: fixed;
     left: 0;
     top: 0;
-
     width: 100%;
     height: 100%;
     background: url(../img/glass.png) center no-repeat white;
     background-size: contain;
     opacity: 0.8;
-
     z-index: 99;
 }
-
 
 /* вывод результатов =======================*/
 .best-result {
     position: fixed;
     top: -100px;
-
     padding: 30px;
     font-size: 35px;
     line-height: 1.6;
@@ -310,7 +302,6 @@
     text-align: center;
     opacity: 0;
     transition: 4s linear;
-
     z-index: 100;
 }
 
@@ -320,11 +311,120 @@
     opacity: 1;
 }
 
-
 /* адаптивность ================================ */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1300px) {
     .wrapper {
         width: 100vw;
         height: 50vw;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .wild-west {
+        font-size: 50px;
+    }
+
+    .slaider__text {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+}
+
+/* высота */
+@media screen and (max-height: 800px) {
+    .slaider {
+        width: 70%;
+        border-radius: 170px;
+        background-color: rgba(230, 172, 119, 0.774);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .wild-west {
+        font-size: 50px;
+    }
+
+    .slaider__text {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+
+    .start-button {
+        width: 20%;
+        height: 6%;
+        font-size: 16px;
+    }
+
+    .slaider__window {
+        height: 65vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media screen and (max-height: 650px) {
+    /* .wrapper {
+        width: 200vmin;
+        height: 50vmin;
+    } */
+}
+
+@media screen and (max-height: 700px) {
+    .left {
+        border-right: 30px solid #8f3a3a;
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;
+    }
+
+    .left:hover {
+        border-right: 30px solid #3AAF7E;
+    }
+
+    .right {
+        border-left: 30px solid #8f3a3a;
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;
+    }
+
+    .right:hover {
+        border-left: 30px solid #3AAF7E;
+    }
+}
+
+@media screen and (max-height: 400px) {
+    .wrapper {
+        width: 196vh;
+        height: 98vh;
+    }
+}
+
+@media screen and (max-height: 360px) {
+    .slaider {
+        width: 80%;
+    }
+
+    .wild-west {
+        font-size: 35px;
+    }
+
+    .slaider__text {
+        font-size: 16px;
+    }
+
+    .start-button {
+        width: 20%;
+        height: 6%;
+        font-size: 16px;
+    }
+
+    .slaider__window {
+        height: 65vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
     }
 }

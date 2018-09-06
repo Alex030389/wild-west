@@ -1,12 +1,13 @@
 'use strict'
 
-
 var audioMenu = new Audio;
 if (audioMenu.canPlayType("audio/mpeg") == "probably") {
-    audioMenu.src = "./audio/menu.ogg";
-} else {
-    audioMenu.src = "./audio/menu.mp3";
-}
+        audioMenu.src = "./audio/menu.ogg";
+    } else {
+        audioMenu.src = "./audio/menu.mp3";
+        
+    }
+audioMenu.loop = true;
 
 var audioFight = new Audio;
 if (audioFight.canPlayType("audio/mpeg") == "probably") {
