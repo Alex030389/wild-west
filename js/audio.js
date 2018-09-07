@@ -1,53 +1,28 @@
 'use strict'
 
 var audioMenu = new Audio;
-if (audioMenu.canPlayType("audio/mpeg") == "probably") {
-        audioMenu.src = "./audio/menu.ogg";
-    } else {
-        audioMenu.src = "./audio/menu.mp3";
-        
-    }
-audioMenu.loop = true;
-
 var audioFight = new Audio;
-if (audioFight.canPlayType("audio/mpeg") == "probably") {
-    audioFight.src = "./audio/fight.ogg";
-} else {
-    audioFight.src = "./audio/fight.mp3";
-}
-audioFight.loop = true;
-
 var audioMyShot = new Audio;
-if (audioMyShot.canPlayType("audio/mpeg") == "probably") {
-    audioMyShot.src = "./audio/my-shot.ogg";
-} else {
-    audioMyShot.src = "./audio/my-shot.mp3";
-}
-
 var audioRecharge = new Audio;
-if (audioRecharge.canPlayType("audio/mpeg") == "probably") {
-    audioRecharge.src = "./audio/recharge.ogg";
-} else {
-    audioRecharge.src = "./audio/recharge.mp3";
-}
-
 var audioGangShot = new Audio;
-if (audioGangShot.canPlayType("audio/mpeg") == "probably") {
-    audioGangShot.src = "./audio/gang-shot.ogg";
-} else {
-    audioGangShot.src = "./audio/gang-shot.mp3";
-}
-
 var audioGlass = new Audio;
-if (audioGlass.canPlayType("audio/mpeg") == "probably") {
-    audioGlass.src = "./audio/broken-glass.ogg";
-} else {
-    audioGlass.src = "./audio/broken-glass.mp3";
+var audioTheEnd = new Audio;
+
+initAudio(audioMenu, "./audio/menu.ogg", "./audio/menu.mp3");
+initAudio(audioFight, "./audio/fight.ogg", "./audio/fight.mp3");
+initAudio(audioMyShot, "./audio/my-shot.ogg", "./audio/my-shot.mp3");
+initAudio(audioRecharge, "./audio/recharge.ogg", "./audio/recharge.mp3");
+initAudio(audioGangShot, "./audio/gang-shot.ogg", "./audio/gang-shot.mp3");
+initAudio(audioGlass, "./audio/broken-glass.ogg", "./audio/broken-glass.mp3");
+initAudio(audioTheEnd, "./audio/the-end.ogg", "./audio/the-end.mp3");
+initAudio(audioMenu, "./audio/menu.ogg", "./audio/menu.mp3");
+
+function initAudio(name, ogg, mp3) {
+    if (name.canPlayType("audio/mpeg") == "probably") {
+        name.src = ogg;
+    } else {
+        name.src = mp3;
+    }
 }
 
-var audioTheEnd = new Audio;
-if (audioTheEnd.canPlayType("audio/mpeg") == "probably") {
-    audioTheEnd.src = "./audio/the-end.ogg";
-} else {
-    audioTheEnd.src = "./audio/the-end.mp3";
-}
+audioFight.loop = true;

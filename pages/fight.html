@@ -1,8 +1,8 @@
-<!-- <div class="kust-wrap">
+<div class="kust-wrap">
     <div class="kust">
         <img class="kust__img" src="./img/kust.png" alt="">
     </div>
-</div> -->
+</div>
 
 <div class="wrapper">
     <div class="door-1 door"></div>
@@ -68,7 +68,7 @@
         <g class="saloon">
             <path d="M531 332C531 304.938 552.938 283 580 283H720C747.062 283 769 304.938 769 332V349H531V332Z" fill="#F6E6E6"
                 stroke="black" stroke-width="2" />
-            <text x=555 y=333 font-size=38 font-family="Corben" , Verdana fill=#611F22>SALLON</text>
+            <text x=540 y=333 fill=#611F22>SALLON</text>
         </g>
         <g>
             <rect class="door-svg" x="126" y="151" width="98" height="198" fill="#666666" stroke="black" stroke-width="2" />
@@ -133,17 +133,13 @@
 </div>
 
 
-
-
-
-
 <script>
     "use strict"
 
     var wrapper = document.querySelector(".wrapper");
 
     // Позиционирование дверных проемов в здании
-    // Двери описываются с лева на право, сверху в низ. Сверху 4 двери, внизу 3
+    // Двери описываются с лева на право, сверху в низ.
 
     var doorSvg = document.querySelectorAll(".door-svg");
 
@@ -202,7 +198,7 @@
     }
 
     // Полет куста       ==============================================================
-    /* var kustWrap = document.querySelector(".kust-wrap");
+    var kustWrap = document.querySelector(".kust-wrap");
     var kust = {
         posX: 0,
         posY: 0,
@@ -266,11 +262,9 @@
 
         kust.update();
         RAF(tick);
-    } */
+    }
 
-
-
-    startGame();
+    // startGame();
 
     function startGame() {
         audioFight.play();
@@ -290,8 +284,6 @@
             }
         }
 
-
-
         //гангстеры                 ================================================================
         var timeout = undefined;
 
@@ -299,9 +291,18 @@
             this.img = './img/' + img;
             this.create = function () {
                 var elem = document.createElement('img');
-                elem.className = 'gangsters';
                 elem.setAttribute('src', this.img);
+                elem.className = 'gangsters';
                 timeout = setTimeout(function () {
+                    var shotImg = document.createElement('img');
+                    shotImg.setAttribute('src', './img/shot.png');
+                    shotImg.className = 'fireImg';
+                    elem.appendChild(shotImg);
+                    elem.parentNode.appendChild(shotImg);
+                    var timeout2 = setTimeout(function() {
+                        elem.parentNode.remove(shotImg);
+                    }, 400)
+
                     sheriff.hit();
                 }, 2000);
                 return elem;
@@ -325,7 +326,7 @@
             return allGang[currentG++];
         }
 
-        // рандомное появления в дверных проемах и открытие закрытие калитки       !!!!!!!!!!!!! (переделать в объект)
+        // рандомное появления в дверных проемах и открытие закрытие калитки
         var doors = document.querySelectorAll('.door');
 
         var cont = 0;
@@ -350,7 +351,6 @@
             }
         }
 
-
         // уменьшение жизней, запись результата и выход из игры        =========================================
         var sheriff = {
             health: 2,
@@ -365,12 +365,10 @@
                     clearTimeout(timeout);
                     clearInterval(taimer);
                     var result = score.count;
-                    // final(result);
+                    final(result);
                 }
             }
         }
-
-
 
         // стрельба и перезарядка. включение и отключения кликов       !!!!!!!!!!!!!!!!! объект
         window.addEventListener("click", shot, false);
@@ -390,16 +388,6 @@
             if (e.target == door7Move.elem.firstChild) {
                 door7Move.move();
             }
-
-            // for (var i = 0; i < doors.length; i++) {
-            //     if (e.target == doors[i].firstChild) {
-            //         clearTimeout(timeout);
-            //         doors[i].removeChild(doors[i].firstChild);
-            //     }
-            // }
-
-
-            
 
             if (e.target == door5Move.elem.firstChild && propusk1 == 2) {
                 propusk1--;
@@ -449,8 +437,6 @@
             }
         }
 
-
-
         // смещение рандомное гангстеров в проемах        ===============================================
         var door5Move = new DoorMove('door-bottom-5__inner', 'door-bottom-5__inner door-bottom-5__inner_move-right',
             'door-bottom-5__inner door-bottom-5__inner_move-left');
@@ -474,8 +460,6 @@
                 }
         }
 
-
-
         // открытие калитки при появлении гангстера        ====================================================
         var kalitka = {
             elemLeft: document.querySelector('.kalitka__left'),
@@ -490,25 +474,18 @@
             }
         }
 
-
-
         // random      =========================================================================================
         function randomDiap(n, m) {
             return Math.floor(Math.random() * (m - n + 1)) + n;
         }
     }
 
-
-
     // вывод финальной заставки        =========================================================================
     function final(yourResult) {
 
-        // разбить стекло =================================================================
         var theEnd = document.createElement('div');
         theEnd.classList.add('the-end');
         document.body.appendChild(theEnd);
-
-        // вставить звук разбитого стекла
 
         // ajax
         var info;
@@ -569,7 +546,7 @@
         function updateReady() {
             var bestResult = document.createElement('div');
             bestResult.classList.add('best-result');
-            bestResult.innerHTML = 'Лучший результат: ' + info.lider + '<br>' + 'Твой результат: ' + yourResult;
+            bestResult.innerHTML = 'Best result: ' + info.lider + '<br>' + 'Your result: ' + yourResult;
             document.body.appendChild(bestResult);
             setTimeout(function () {
                 audioTheEnd.play();

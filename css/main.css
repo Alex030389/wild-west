@@ -1,4 +1,4 @@
-/* Прелоадер =======================================*/
+/* ============= прелоадер ================= */
 .preloader {
     position: fixed;
     left: 0;
@@ -10,7 +10,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     transition: 1s all;
     opacity: 1;
 }
@@ -36,9 +35,9 @@
     }
 }
 
+/* ============= menu ====================== */
 .body-menu {
     background: url(../img/bg.jpg) center center no-repeat;
-    /* background: url(../img/bg.jpg) center center no-repeat rgb(114, 30, 30); */
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -50,7 +49,6 @@
     width: 100%;
     max-height: 800px;
     height: 100%;
-    cursor: crosshair;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -58,8 +56,9 @@
 }
 
 .wild-west {
-    color: white;
+    color: rgb(247, 214, 170);
     font-size: 80px;
+    font-family: 'Vast Shadow' ,'Times New Roman, Times', serif;
 }
 
 .slider {
@@ -80,6 +79,7 @@
     border-top: 50px solid transparent;
     border-bottom: 50px solid transparent;
     transition: 300ms;
+    cursor: pointer;
 }
 
 .left-button:hover {
@@ -93,10 +93,11 @@
     border-top: 50px solid transparent;
     border-bottom: 50px solid transparent;
     transition: 300ms;
+    cursor: pointer;
 }
 
 .right-button:hover {
-    border-left: 50px solid #3AAF7E
+    border-left: 50px solid #3AAF7E;
 }
 
 .slider__window {
@@ -143,14 +144,16 @@
     width: 30%;
     height: 8%;
     background-color: #3AAF7E;
-    font-size: 20px;
+    font-size: 25px;
+    font-family: 'Vast Shadow' ,'Times New Roman, Times', serif;
     color: white;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    cursor: pointer;
 }
 
-.button:hover {
+.start-button:hover {
     background-color: #e25b5b;
     transition: 300ms;
 }
@@ -171,7 +174,12 @@
     box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.75);
 }
 
-/* куст ============================================*/
+.saloon {
+    font-size: 38px;
+    font-family: 'Vast Shadow' ,'Times New Roman, Times', serif;
+}
+
+/* ====================== куст ====================*/
 .kust-wrap {
     width: 100vw;
     height: 15vw;
@@ -196,7 +204,7 @@
     /* will-change: transform; */
 }
 
-/* дверные проемы ================================*/
+/* ================ дверные проемы ==================*/
 .door-1,
 .door-2,
 .door-3,
@@ -256,7 +264,7 @@
     transition: 1s;
 }
 
-/* калитка ======================================*/
+/* ================ калитка =================*/
 .kalitka {
     position: absolute;
     top: 0;
@@ -289,14 +297,21 @@
     transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
 }
 
-/* гангстеры ============================= */
+/* ============= гангстеры ==================== */
 .gangsters {
     width: 100%;
     height: 100%;
-    transition: 1s;
 }
 
-/* разбитое стекло ========================*/
+.fireImg {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 60%;
+    height: 30%;
+    z-index: 10;
+}
+/* ============= разбитое стекло ==================*/
 .the-end {
     position: fixed;
     left: 0;
@@ -309,7 +324,7 @@
     z-index: 99;
 }
 
-/* вывод результатов =======================*/
+/* ============== вывод результатов ====================*/
 .best-result {
     position: fixed;
     top: -100px;
@@ -333,7 +348,8 @@
     opacity: 1;
 }
 
-/* =========================== ширина ============================== */
+/* =============== адаптивность ============= */
+/* =============== ширина =================== */
 @media screen and (max-width: 1300px) {
     /* fight */
     .wrapper {
@@ -373,7 +389,7 @@
 @media screen and (max-width: 450px) {
     /* menu */
     .wild-west {
-        font-size: 50px;
+        font-size: 45px;
     }
     .slider {
         border-radius: 0px;
@@ -383,9 +399,15 @@
         font-size: 18px;
         line-height: 1.2;
     }
+
+    .start-button {
+        width: 30%;
+        height: 6%;
+        font-size: 16px;
+    }
 }
 
-/* =============================== высота ========================== */
+/* =================== высота ===================== */
 @media screen and (max-height: 780px) {
     /* menu */
     .slider {
