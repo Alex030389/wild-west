@@ -1,3 +1,49 @@
+<div class="preloader" onclick="audioMenu.play()">
+    <img class="loader" src="./img/loader2.png" alt="loader">
+</div>
+
+<div class="wrap">
+    <div class="wild-west">Wild West</div>
+    <div class="slider">
+        <div class="left-button"></div>
+
+        <div class="slider__window">
+
+            <div class="slide showing">
+                <img class="slide__img" src="../img/1.png" alt="one">
+                <div class="slide__text">
+                    <h1>Внимание!!!</h1>
+                    <p>Нужно выбить из здания опасную и вооруженную группировку</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img class="slide__img" src="../img/2.png" alt="one">
+                <div class="slide__text">
+                    <h1>Патроны!!!</h1>
+                    <p>Следите за уровнем боеприпасов.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img class="slide__img" src="../img/3.png" alt="one">
+                <div class="slide__text">
+                    <h1>Перезарядка!!!</h1>
+                    <p>На сенсорном экране свайп.</p><p>На клавиатуре нажать пробел.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img class="slide__img" src="../img/4.png" alt="one">
+                <div class="slide__text">
+                    <h1>Жизни!!!</h1>
+                    <p>Звезды - жизни. Следите за здоровьем.</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="right-button"></div>
+    </div>
+    <div class="start-button">START</div>
+</div>
+
 <script>
     "use strict"
     setTimeout(function () {
@@ -5,33 +51,35 @@
         if (!preloader.classList.contains("done")) {
             preloader.classList.add("done");
         }
-    }, 2000)
-</script>
+    }, 1000)
 
-<div class="preloader" onclick="audioMenu.play()">
-    <img class="loader" src="./img/loader2.png" alt="loader">
-</div>
+    var leftButton = document.querySelector(".left-button");
+    var rightButton = document.querySelector(".right-button");
+    var slides = document.querySelectorAll('.slide');
+    var currentSlide = 0;
 
-<div class="wrap">
-    <div class="wild-west">Wild West</div>
-    <div class="slaider">
-        <div class="left"></div>
+    leftButton.addEventListener("click", function () {
+        previousSlide();
+    });
 
-        <div class="slaider__window">
-            <img class="slaider__img" src="../img/banda.png" alt="">
-            <div class="slaider__text">
-                <h1>Внимание!!!</h1>
-                <p>Нужно выбить из здания опасную и вооруженную группировку</p>
-            </div>
-        </div>
+    rightButton.addEventListener("click", function () {
+        nextSlide();
+    });
 
-        <div class="right"></div>
-    </div>
-    <div class="start-button">START</div>
-</div>
+    function previousSlide() {
+        goToSlide(currentSlide - 1);
+    }
 
-<script>
-    "use strict"
+    function nextSlide() {
+        goToSlide(currentSlide + 1);
+    }    
+
+    function goToSlide(n) {
+            slides[currentSlide].className = 'slide';
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].className = 'slide showing';
+        }
+
     var startButton = document.querySelector(".start-button");
     startButton.addEventListener('click', function () {
         audioMenu.pause();
