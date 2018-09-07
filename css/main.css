@@ -7,9 +7,17 @@
     height: 100%;
     background: #ebb43f;
     z-index: 99;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: 1s all;
+    -o-transition: 1s all;
     transition: 1s all;
     opacity: 1;
 }
@@ -17,7 +25,8 @@
 .loader {
     width: 150px;
     height: 150px;
-    animation: 5s spin infinite linear;
+    -webkit-animation: 5s spin infinite linear;
+            animation: 5s spin infinite linear;
 }
 
 .done {
@@ -25,13 +34,27 @@
     visibility: hidden;
 }
 
-@keyframes spin {
+@-webkit-keyframes spin {
     from {
-        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
     }
 
     to {
-        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
     }
 }
 
@@ -39,9 +62,15 @@
 .body-menu {
     background: url(../img/bg.jpg) center center no-repeat;
     background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .wrap {
@@ -49,10 +78,18 @@
     width: 100%;
     max-height: 800px;
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .wild-west {
@@ -66,9 +103,14 @@
     height: 50%;
     border-radius: 150px;
     background-color: rgba(230, 172, 119, 0.774);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 20px;
 }
 
@@ -78,6 +120,8 @@
     border-right: 50px solid #8f3a3a;
     border-top: 50px solid transparent;
     border-bottom: 50px solid transparent;
+    -webkit-transition: 300ms;
+    -o-transition: 300ms;
     transition: 300ms;
     cursor: pointer;
 }
@@ -92,6 +136,8 @@
     border-left: 50px solid #8f3a3a;
     border-top: 50px solid transparent;
     border-bottom: 50px solid transparent;
+    -webkit-transition: 300ms;
+    -o-transition: 300ms;
     transition: 300ms;
     cursor: pointer;
 }
@@ -117,7 +163,6 @@
     opacity: 0;
     z-index: 1;
     -webkit-transition: opacity 1s;
-    -moz-transition: opacity 1s;
     -o-transition: opacity 1s;
     transition: opacity 1s;
 }
@@ -147,23 +192,39 @@
     font-size: 25px;
     font-family: 'Vast Shadow' ,'Times New Roman, Times', serif;
     color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     cursor: pointer;
 }
 
 .start-button:hover {
     background-color: #e25b5b;
+    -webkit-transition: 300ms;
+    -o-transition: 300ms;
     transition: 300ms;
 }
 
 /* ================= fight css =================== */
 .body-fight {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     cursor: crosshair;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(37%, rgb(120, 170, 194)), color-stop(38%, rgb(233, 190, 127)));
+    background-image: -webkit-linear-gradient(rgb(120, 170, 194) 37%, rgb(233, 190, 127) 38%);
+    background-image: -o-linear-gradient(rgb(120, 170, 194) 37%, rgb(233, 190, 127) 38%);
     background-image: linear-gradient(rgb(120, 170, 194) 37%, rgb(233, 190, 127) 38%);
 }
 
@@ -171,7 +232,8 @@
     position: relative;
     width: 1300px;
     height: 650px;
-    box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.75);
 }
 
 .saloon {
@@ -199,8 +261,12 @@
 .kust__img {
     width: 100%;
     height: 100%;
-    transition-duration: 6s;
-    transition-timing-function: linear;
+    -webkit-transition-duration: 6s;
+         -o-transition-duration: 6s;
+            transition-duration: 6s;
+    -webkit-transition-timing-function: linear;
+         -o-transition-timing-function: linear;
+            transition-timing-function: linear;
     /* will-change: transform; */
 }
 
@@ -235,6 +301,8 @@
     width: calc(100% / 3);
     height: 100%;
     /* background-color: rgb(172, 172, 172); */
+    -webkit-transition: 1s;
+    -o-transition: 1s;
     transition: 1s;
 }
 
@@ -248,6 +316,8 @@
     height: 100%;
     margin-right: calc(100% / 3 * 2);
     /* background-color: rgb(172, 172, 172) ; */
+    -webkit-transition: 1s;
+    -o-transition: 1s;
     transition: 1s;
 }
 
@@ -261,6 +331,8 @@
     width: calc(100% / 3);
     height: 100%;
     /* background-color: rgb(172, 172, 172); */
+    -webkit-transition: 1s;
+    -o-transition: 1s;
     transition: 1s;
 }
 
@@ -276,6 +348,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
     transition: 0.2s;
 }
 
@@ -284,17 +358,25 @@
     position: absolute;
     top: 0;
     right: 0;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
     transition: 0.2s;
 }
 
 .kalitka__left_open {
-    transform-origin: 0;
-    transform: rotateX(0deg) rotateY(-180deg) rotateZ(0deg);
+    -webkit-transform-origin: 0;
+        -ms-transform-origin: 0;
+            transform-origin: 0;
+    -webkit-transform: rotateX(0deg) rotateY(-180deg) rotateZ(0deg);
+            transform: rotateX(0deg) rotateY(-180deg) rotateZ(0deg);
 }
 
 .kalitka__right_open {
-    transform-origin: 100%;
-    transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+    -webkit-transform-origin: 100%;
+        -ms-transform-origin: 100%;
+            transform-origin: 100%;
+    -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+            transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
 }
 
 /* ============= гангстеры ==================== */
@@ -333,11 +415,19 @@
     line-height: 1.6;
     color: rgb(255, 255, 255);
     background-color: rgb(218, 85, 67);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
     opacity: 0;
+    -webkit-transition: 4s linear;
+    -o-transition: 4s linear;
     transition: 4s linear;
     z-index: 100;
 }
