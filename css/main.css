@@ -11,11 +11,11 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-transition: 1s all;
     -o-transition: 1s all;
     transition: 1s all;
@@ -26,7 +26,7 @@
     width: 150px;
     height: 150px;
     -webkit-animation: 5s spin infinite linear;
-            animation: 5s spin infinite linear;
+    animation: 5s spin infinite linear;
 }
 
 .done {
@@ -37,24 +37,24 @@
 @-webkit-keyframes spin {
     from {
         -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
+        transform: rotate(0deg);
     }
 
     to {
         -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
 @keyframes spin {
     from {
         -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
+        transform: rotate(0deg);
     }
 
     to {
         -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -66,11 +66,11 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .wrap {
@@ -83,19 +83,19 @@
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .wild-west {
     color: rgb(247, 214, 170);
     font-size: 80px;
-    font-family: 'Vast Shadow' ,'Times New Roman, Times', serif;
+    font-family: 'Vast Shadow', 'Times New Roman, Times', serif;
 }
 
 .slider {
@@ -107,10 +107,10 @@
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     padding: 20px;
 }
 
@@ -190,16 +190,16 @@
     height: 8%;
     background-color: #3AAF7E;
     font-size: 25px;
-    font-family: 'Vast Shadow' ,'Times New Roman, Times', serif;
+    font-family: 'Vast Shadow', 'Times New Roman, Times', serif;
     color: white;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     cursor: pointer;
 }
 
@@ -216,11 +216,11 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     cursor: crosshair;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(37%, rgb(120, 170, 194)), color-stop(38%, rgb(233, 190, 127)));
     background-image: -webkit-linear-gradient(rgb(120, 170, 194) 37%, rgb(233, 190, 127) 38%);
@@ -233,12 +233,12 @@
     width: 1300px;
     height: 650px;
     -webkit-box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.75);
-            box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.75);
 }
 
 .saloon {
     font-size: 38px;
-    font-family: 'Vast Shadow' ,'Times New Roman, Times', serif;
+    font-family: 'Vast Shadow', 'Times New Roman, Times', serif;
 }
 
 /* ====================== куст ====================*/
@@ -262,11 +262,11 @@
     width: 100%;
     height: 100%;
     -webkit-transition-duration: 6s;
-         -o-transition-duration: 6s;
-            transition-duration: 6s;
+    -o-transition-duration: 6s;
+    transition-duration: 6s;
     -webkit-transition-timing-function: linear;
-         -o-transition-timing-function: linear;
-            transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
     /* will-change: transform; */
 }
 
@@ -365,18 +365,18 @@
 
 .kalitka__left_open {
     -webkit-transform-origin: 0;
-        -ms-transform-origin: 0;
-            transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
     -webkit-transform: rotateX(0deg) rotateY(-180deg) rotateZ(0deg);
-            transform: rotateX(0deg) rotateY(-180deg) rotateZ(0deg);
+    transform: rotateX(0deg) rotateY(-180deg) rotateZ(0deg);
 }
 
 .kalitka__right_open {
     -webkit-transform-origin: 100%;
-        -ms-transform-origin: 100%;
-            transform-origin: 100%;
+    -ms-transform-origin: 100%;
+    transform-origin: 100%;
     -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
-            transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+    transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
 }
 
 /* ============= гангстеры ==================== */
@@ -393,6 +393,7 @@
     height: 30%;
     z-index: 10;
 }
+
 /* ============= разбитое стекло ==================*/
 .the-end {
     position: fixed;
@@ -419,11 +420,11 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     text-align: center;
     opacity: 0;
     -webkit-transition: 4s linear;
@@ -441,6 +442,7 @@
 /* =============== адаптивность ============= */
 /* =============== ширина =================== */
 @media screen and (max-width: 1300px) {
+
     /* fight */
     .wrapper {
         width: 100vw;
@@ -477,10 +479,12 @@
 }
 
 @media screen and (max-width: 450px) {
+
     /* menu */
     .wild-west {
         font-size: 45px;
     }
+
     .slider {
         border-radius: 0px;
     }
@@ -499,6 +503,7 @@
 
 /* =================== высота ===================== */
 @media screen and (max-height: 780px) {
+
     /* menu */
     .slider {
         height: 60%;
@@ -507,6 +512,7 @@
 }
 
 @media screen and (max-height: 630px) {
+
     /* menu */
     .slider {
         width: 70%;
@@ -558,6 +564,7 @@
 }
 
 @media screen and (max-height: 400px) {
+
     /* menu */
     .slide__img {
         width: 40%;
@@ -565,17 +572,30 @@
 
     /* fight */
     .wrapper {
-        width: 196vh;
-        height: 98vh;
+        width: 160vh;
+        height: 80vh;
     }
 }
 
-@media screen and (max-height: 360px) {   
+@media screen and (max-height: 360px) {
     .wild-west {
         font-size: 35px;
     }
 
     .slider__text {
         font-size: 16px;
+    }
+}
+
+@media screen and (max-height: 320px) {
+    /* menu */
+    .wild-west {
+        font-size: 30px;
+    }
+
+    .slide__text {
+        font-size: 16px;
+        line-height: 1.2;
+        padding-top: 10px;
     }
 }
