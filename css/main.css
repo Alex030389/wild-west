@@ -249,13 +249,14 @@
     bottom: 2vh;
     left: 0;
     z-index: 90;
-    /* transform: translateZ(0); */
 }
 
 .kust {
     position: absolute;
     top: 0;
     left: 0;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .kust__img {
@@ -267,7 +268,6 @@
     -webkit-transition-timing-function: linear;
     -o-transition-timing-function: linear;
     transition-timing-function: linear;
-    /* will-change: transform; */
 }
 
 /* ================ дверные проемы ==================*/
@@ -409,7 +409,8 @@
 
 /* ============== вывод результатов ====================*/
 .best-result {
-    position: fixed;
+    position: absolute;
+    cursor: pointer;
     top: -100px;
     padding: 30px;
     font-size: 35px;
@@ -430,11 +431,15 @@
     -webkit-transition: 4s linear;
     -o-transition: 4s linear;
     transition: 4s linear;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
     z-index: 100;
 }
 
 .best-result_opacity {
-    margin-top: -85px;
+    -webkit-transform: translateZ(0) translateY(-50%);
+    transform: translateZ(0) translateY(-50%);
+    /* margin-top: -90px; */
     top: 50%;
     opacity: 1;
 }
@@ -572,8 +577,8 @@
 
     /* fight */
     .wrapper {
-        width: 160vh;
-        height: 80vh;
+        width: 150vh;
+        height: 75vh;
     }
 }
 

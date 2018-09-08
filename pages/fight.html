@@ -376,10 +376,14 @@
         var aa = 6;
         var propusk1 = 2;
         var propusk2 = 2;
-
+        var shotNumber = 0;
         function shot(e) { //выстрел
             var e = e || window.event;
-            audioMyShot.play();
+            if (++shotNumber % 2 == 0) {
+                audioMyShot1.play();
+            } else {
+                audioMyShot2.play();
+            }
             window.navigator.vibrate(100);
 
             if (e.target == door5Move.elem.firstChild) {
@@ -546,7 +550,11 @@
         function updateReady() {
             var bestResult = document.createElement('div');
             bestResult.classList.add('best-result');
-            bestResult.innerHTML = 'Best result: ' + info.lider + '<br>' + 'Your result: ' + yourResult;
+            bestResult.addEventListener('click', function() {
+                location.reload();
+            }, false)
+
+            bestResult.innerHTML = 'Best result: ' + info.lider + '<br>' + 'Your result: ' + yourResult + '<br>' + 'Click here for restart';
             document.body.appendChild(bestResult);
             setTimeout(function () {
                 audioTheEnd.play();
