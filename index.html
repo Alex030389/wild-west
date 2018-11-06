@@ -1,22 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>WildWest</title>
+
     <link rel="icon" href="./img/favicon.png">
-    <link rel="stylesheet" href="./css/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Vast+Shadow" rel="stylesheet">
+    <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/main.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="./js/spa.js" defer></script>
-    <script src="./js/audio.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
+    <script src="./js/audio.js" defer></script>
+    <script src="./js/index.js" defer></script>
 </head>
 
-<body id="IPage">
+<body class="body-menu">
+
+    <div class="preloader">
+        <img class="loader" src="./img/loader2.png" alt="loader">
+    </div>
+
+    <div class="wrap">
+        <div class="wild-west">Wild West</div>
+        <div class="slider">
+            <div class="left-button"></div>
+
+            <div class="slider__window">
+                <div class="slide showing">
+                    <img class="slide__img" src="./img/1.png" alt="one">
+                    <div class="slide__text">
+                        <h1>Цель</h1>
+                        <p>Уничтожить как можно больше бандитов, занявших здание.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img class="slide__img" src="./img/2.png" alt="one">
+                    <div class="slide__text">
+                        <h1>Боеприпасы</h1>
+                        <p>Следите за количеством патронов.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img class="slide__img" src="./img/3.png" alt="one">
+                    <div class="slide__text">
+                        <h1>Перезарядка</h1>
+                        <p>На сенсорном экране свайп.</p>
+                        <p>На клавиатуре нажать пробел.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img class="slide__img" src="./img/4.png" alt="one">
+                    <div class="slide__text">
+                        <h1>Здоровье</h1>
+                        <p>Следите за уровнем здоровья.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-button"></div>
+        </div>
+        <a href="./fight.html" class="start-button">START</a>
+    </div>
+
 </body>
 
 </html>
